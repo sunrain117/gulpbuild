@@ -1,0 +1,20 @@
+/*此文件用于定义变量、函数、混合器等*/
+/*use flexible.js*/
+
+$base-font:75px;//this variable from psd/10
+
+@mixin font-dpr($font-size){
+  font-size: $font-size;
+
+  [data-dpr="2"] & {
+    font-size: $font-size * 2;
+  }
+
+  [data-dpr="3"] & {
+    font-size: $font-size * 3;
+  }
+}
+
+@function px2rem($px){
+  @return ($px/$base-font)*1rem;
+}
